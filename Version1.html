@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Very basic to-do app that uses Console to display our operations -->
+    <meta charset="UTF-8">
+    <title>Version1 of ToDo List App</title>
+</head>
+<body>
+<script>
+    var todos = ['item1'];
+    todos.push('item2');
+    console.log(todos);
+
+    todos.push('item3', 'item4', 'item5');
+    console.log(todos);
+
+    todos[0] = 'item1-done';
+    console.log(todos);
+
+    todos.splice(0, 1);
+    console.log(todos);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Adding Booleans into our object -->
+    <meta charset="UTF-8">
+    <title>Version 4 of our Todo App -- Adding Booleans</title>
+</head>
+<body>
+
+<script>
+
+// Version 4 of our Todo App -- Booleans
+
+var todoList = {
+  todos: [],
+  displayTodos: function() {
+    console.log('My Todos: ', this.todos);
+  },
+
+  //here we put object inside our main object b/c our todo should be 'item1, completed'
+  addTodo: function(todoText) {
+    this.todos.push({
+      todoText: todoText,
+      completed: false //because the value is either yes or no
+    });
+    this.displayTodos();
+  },
+  changeTodo: function(position, todoText) {
+    this.todos[position].todoText = todoText;
+    this.displayTodos();
+  },
+  deleteTodo: function(position) {
+    this.todos.splice(position, 1);
+    this.displayTodos();
+  },
+  toggleCompleted: function(position) {
+    // this.todos[position].completed = true; //this is one way to do it BUT it won't toggle back!
+    var todo = this.todos[position];
+    todo.completed = !todo.completed;
+    this.displayTodos();
+  }
+};
+
+</body>
+</html>

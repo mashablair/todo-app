@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Objects and functions inside objects.  Also 'this'. -->
+    <meta charset="UTF-8">
+    <title>Version 3 -- Objects</title>
+</head>
+<body>
+
+<script>
+    var masha = {
+        age: 35,
+        name: 'Masha',
+        // here we have function inside object.  Function is anonymous because it can use its property name.
+        sayName: function() {
+            console.log(this.name);  //'this' refers to object 'masha'.  We can rewrite:
+            //console.log(masha.name);
+            //But using 'this' is better b/c we can change 'masha' to 'sophie' and we don't have to change the code inside the function!
+        }
+    }
+
+    masha.sayName(); // this will display 'Masha'
+</script>
+
+<script>
+// Version 3 of our Todo App
+
+var todoList = {
+  todos: ['item1', 'item2', 'item3'],
+
+  //These little functions are actually methods! methods = functions inside objects
+  displayTodos: function() {
+    console.log('My Todos: ', this.todos);
+  },
+  addTodo: function(newItem) {
+    this.todos.push(newItem);  //'this' == our object todoList
+    this.displayTodos();
+  },
+  changeTodo: function(position, newValue) {
+    this.todos[position] = newValue;
+    this.displayTodos();
+  },
+  deleteTodo: function(position) {
+    this.todos.splice(position, 1);
+    this.displayTodos();
+  }
+};
+
+todoList.deleteTodo();
+</script>
+</body>
+</html>

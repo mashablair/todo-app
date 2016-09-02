@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--     Here we'll add functions to automate the process a bit. It's like having a sandwich recipes where we have the standard recipe with options of adding turkey or ham or etc. No need to have 10 different recipes.  Instead create a template with a placeholder for meats. -->
+    <meta charset="UTF-8">
+    <title>Version 2 of our Todo app.  Adding FUNCTIONS!</title>
+</head>
+<body>
+
+<!-- -FUNCTIONS- -->
+<!-- <h1>Welcome to my Sandwich Shop!</h1>
+
+<h3>What would you like today?</h2>
+
+<script>
+var meat = 'turkey';
+function makeSandwich(filling) {
+    document.write('I want a delicious sandwich with ' + filling + '!');
+}
+
+makeSandwich(meat);
+</script> -->
+
+<h1>My ToDo App</h1>
+
+<script>
+var todos = ['item1', ' item2', ' item3'];
+
+function displayTodos() {
+    // document.write('My Todos: ', todos);
+    console.log('My Todos: ', todos);
+}
+
+// displayTodos();  // --> My Todos:  ["item1", "item2", "item3"]
+
+function addTodo(todo) {
+    todos.push(todo);
+    displayTodos();
+}
+
+// addTodo('hello!');
+
+function changeTodo(i, newItem) {  //i == position
+    todos[i] = newItem;
+    displayTodos();
+}
+
+// changeTodo(1, 'cool stuff!'); // --> My Todos:  ["item1", "cool stuff!", "item3"]
+
+// This function should display todos 3 times:
+function runThreeTimes() {
+    for (var k=0; k<3; k++) {
+        displayTodos();
+    }
+}
+
+runThreeTimes();  // yay!  it worked!!!!! :-D
+
+function deleteTodo(position) {
+    todos.splice(position, 1);
+    displayTodos();
+}
+
+// deleteTodo(0);  // --> My Todos:  ["cool stuff!", "item3"]
+
+
+</script>
+
+</body>
+</html>

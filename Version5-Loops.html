@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- To add loops to our Todo App -->
+    <meta charset="UTF-8">
+    <title>Version 5 of Todo App -- adding loops</title>
+</head>
+<body>
+
+<h1>Loops!</h1>
+
+<script>
+    //Here are the names:
+    // for (initialization; condition; final-expression) {}
+
+    var testArray = ['Sophie', 'Ninja', 'Elijah'];
+    // Instead of using i < 3, use testArray.length b/c it's dynamic so it will change when our array changes:
+    for (var i = 0; i < testArray.length; i++) {
+        console.log(testArray[i]);
+        // we can also just print the value of i to show that it's a real variable:
+        console.log(i);
+    }
+
+</script>
+
+<script>
+    var todoList = {
+        todos: [],
+
+        // we added loop to display all todoText in our array:
+        displayTodos: function() {
+            // we introduced logic:
+            if (this.todos.length === 0) {
+                console.log('Your todo list is empty!');
+            } else {
+                console.log("My Todos: ");
+                for (var i = 0; i < this.todos.length; i++) {
+                    if (this.todos[i].completed === true) {
+                        console.log('(X)', this.todos[i].todoText);
+                    } else {
+                        console.log('( )', this.todos[i].todoText);
+                    }
+                }
+            }
+        },
+
+        addTodo: function(todoText) {
+            this.todos.push({
+                todoText: todoText,
+                completed: false
+            });
+            this.displayTodos();
+        },
+
+        changeTodo: function(position, todoText) {
+            this.todos[position].todoText = todoText;
+            this.displayTodos();
+        },
+
+        deleteTodo: function(position) {
+            this.todos(position, 1);
+            this.displayTodos();
+        },
+
+        toggleCompleted: function(position) {
+            var todo = this.todos[position];
+            todo.completed = !todo.completed;
+            this.displayTodos();
+        }
+
+    };
+
+    document.write(todoList);
+    todoList.addTodo('skydiving');
+    document.write(todoList.todos[0].todoText);
+
+</script>
+
+</body>
+</html>
