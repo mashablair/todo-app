@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- // In this version we refactored our code by adding 'handlers' object to keep all our handler functions and by adding inputs on display which will capture the user's input and connect JS to it.   -->
+    <meta charset="UTF-8">
+    <title>Version 8 of Todo App -- Adding Inputs</title>
+</head>
+
+<body>
+  <h1>Todo List</h1>
+
+  <div>
+    <!-- Here we changed 'addEventListener' to 'onclick' attribute -->
+    <button onclick="handlers.displayTodos()">Display Todos</button>
+    <button onclick="handlers.toggleAll()">Toggle All</button>
+  </div>
+
+  <div>
+    <button onclick="handlers.addTodo()">Add</button>
+    <input type="text" id="addTodoInputText">
+  </div>
+
+  <div>
+    <button onclick="handlers.changeTodo()">Change Todo</button>
+    <input type="number" id="changeTodoPositionInput">
+    <input type="text" id="changeTodoTextInput">
+  </div>
+
+  <div>
+    <button onclick="handlers.deleteTodo()">Delete</button>
+    <input type="number" id="deleteTodoPositionInput">
+  </div>
+
+  <div>
+    <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
+    <input id="toggleCompletedPositionInput" type="number">
+  </div>
+
+  <script src="script8.js"></script>
+</body>
+
+</html>
