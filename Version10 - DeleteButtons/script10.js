@@ -56,6 +56,7 @@ var handlers = {
     changeTodoTextInput.value = '';
     view.displayTodos();
   },
+  // We updated this in Version 10:
   deleteTodo: function(position) {
     todoList.deleteTodo(position);
     view.displayTodos();
@@ -93,6 +94,8 @@ var view = {
       todosUl.appendChild(todoLi);
     }
   },
+
+  // This is new in Version 10:
   createDeleteButton: function() {
     //we create button
     var deleteButton = document.createElement('button');
@@ -102,6 +105,7 @@ var view = {
     // this function returns deleteButton as a value so we can use it in other functions
     return deleteButton;
   },
+  // This is new in Version 10:
   setUpEventListeners: function() {
     var todosUl = document.querySelector('ul');
 
