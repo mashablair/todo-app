@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Version 9 of Todo App -- Espcape Console</title>
+</head>
+<body>
+
+<h1>Todo List</h1>
+
+<div>
+    <button onclick="handlers.toggleAll()">Toggle All</button>
+</div>
+
+<div>
+    <button onclick="handlers.addTodo()">Add</button>
+    <input type="text" id="addTodoInputText">
+</div>
+
+<div>
+    <button onclick="handlers.changeTodo()">Change Todo</button>
+    <input type="number" id="changeTodoInputNumber">
+    <input type="text" id="changeTodoInputText">
+</div>
+
+<div>
+    <button onclick="handlers.deleteTodo()">Delete</button>
+    <input type="number" id="deleteTodoInputNumber">
+</div>
+
+<div>
+    <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
+    <input type="number" id="toggleCompletedInputNumber">
+</div>
+
+<ul>
+
+</ul>
+
+<script src="script9.js"></script>
+
+</body>
+</html>
