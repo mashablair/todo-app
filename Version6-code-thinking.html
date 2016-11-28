@@ -44,7 +44,7 @@
         },
 
         deleteTodo: function(position) {
-            this.todos(position, 1);
+            this.todos.splice(position, 1);
             this.displayTodos();
         },
 
